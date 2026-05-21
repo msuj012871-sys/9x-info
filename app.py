@@ -17,7 +17,7 @@ import sys
 # === Settings ===
 MAIN_KEY = base64.b64decode('WWcmdGMlREV1aDYlWmNeOA==')
 MAIN_IV = base64.b64decode('Nm95WkRyMjJFM3ljaGpNJQ==')
-RELEASEVERSION = "OB52"
+RELEASEVERSION = "OB53"
 USERAGENT = "Dalvik/2.1.0 (Linux; U; Android 13; CPH2095 Build/RKQ1.211119.001)"
 SUPPORTED_REGIONS = {"IND", "BR", "US", "SAC", "NA", "SG", "RU", "ID", "TW", "VN", "TH", "ME", "PK", "CIS", "BD", "EUROPE"}
 
@@ -169,7 +169,7 @@ def format_response(data):
 # === Fetch Region from External API ===
 async def fetch_region_from_uid(uid: str) -> str:
     # Try the REGION-API endpoint first
-    url = f"https://mg-aqeel-region-v52.vercel.app/check?uid={uid}"
+    url = f"https://9x-region.vercel.app/mafu-region?uid={uid}&key=mafu"
     async with httpx.AsyncClient() as client:
         try:
             resp = await client.get(url, timeout=10)
